@@ -1,0 +1,147 @@
+﻿<Window x:Class="StudentInfoSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInfoSystem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="475" Width="775">
+    <Window.DataContext>
+        <local:MainFormVM/>
+    </Window.DataContext>
+    <Grid x:Name="MainGrid">
+        <GroupBox Header="Лични данни" HorizontalAlignment="Left" Height="160" VerticalAlignment="Top" Width="330" Margin="25,10,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Label x:Name="lblName" Content="Име:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="35"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Label x:Name="lblSurname" Content="Презиме:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="60"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Label x:Name="lblLastName" Content="Фамилия:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="60"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBox Text="{Binding CurrentStudent.FirstName}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBox Text="{Binding CurrentStudent.Surname}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBox Text="{Binding CurrentStudent.LastName}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Студентска информация" HorizontalAlignment="Left" VerticalAlignment="Top" Height="224" Width="705" Margin="25,185,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Label x:Name="lblFaculty" Content="Факултет:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Label x:Name="lblProgramme" Content="Специалност:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Label x:Name="lblOKS" Content="ОКС:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Label x:Name="lblStatus" Content="Статус:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBox Text="{Binding CurrentStudent.Faculty}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBox Text="{Binding CurrentStudent.Programme}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBox Text="{Binding CurrentStudent.Qualification}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <TextBox Text="{Binding CurrentStudent.Status}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                        <!--
+                            <ListBox ItemsSource="{Binding StudStatusChoices}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="173"/>
+                        -->
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Label x:Name="lblFacultyNumber" Content="Фак.номер:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Label x:Name="lblCourse" Content="Курс:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Label x:Name="lblStream" Content="Поток:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Label x:Name="lblGroup" Content="Група:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBox Text="{Binding CurrentStudent.FacultyNumber}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBox Text="{Binding CurrentStudent.Course}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBox Text="{Binding CurrentStudent.Stream}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <TextBox Text="{Binding CurrentStudent.Group}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="120"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
